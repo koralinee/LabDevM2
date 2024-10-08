@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SISTEMA WEB</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Cadastrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="/consulta">Consultar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form action="/cadastrar" method="post" class="container">
+        <p class="text-start fs-5 mt-3">Cadastrar - Agendamento de Potenciais Clientes</p>
+        <p class="text-start fs-6">Sistema utilizado para agendamento de serviços</p>
+        <div class="col gap-3 my-3 d-flex flex-column">
+            <div class="col">
+                <div class="col">
+                    Nome:
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="nome" name="nome">
+                </div>
+            </div>
+            <div class="col">
+                <div class="col">
+                    Celular:
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="celular" name="celular" placeholder="(00) 00000-0000" maxlength="15">
+                </div>
+            </div>
+            <div class="col">
+                <div class="col">
+                    Origem:
+                </div>
+                <div class="col">
+                    <select class="form-select" id="origem" name="origem">
+                        <option value="Celular">Celular</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="col">
+                    Data do Contato:
+                </div>
+                <div class="col">
+                    <input type="date" class="form-control" id="data_contato" name="data_contato">
+                </div>
+            </div>
+            <div class="col">
+                <div class="col">
+                    Observação:
+                </div>
+                <div class="col">
+                    <textarea class="form-control" id="observacao" name="observacao" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        setTimeout(function() {
+            Inputmask("(99) 99999-9999").mask("#celular");
+        }, 100); 
+    });
+</script>
